@@ -27,7 +27,7 @@ Member::add_extension(MemberExtension::class);
 PageController::add_extension(PageControllerExtension::class);
 ```
 
-2. Create a new page through the CMS using the SteamAuth Page Type
+2. Create a new page through the CMS using the SteamAuth Page Type. You should also hide this page from the menu and search via the Settings tab as it has no frontend purpose beyond validating the Steam Authentication
 
 3. Create a `steamauth.yml` configuration file in `/mysite/_config.php`
 
@@ -39,6 +39,16 @@ Zanderwar\SteamAuth\SteamAuth:
 
 `{{HOST}}` will automatically be replaced with `example.com` and `steamauth` should point to the SteamAuth Page Type url you created earlier
 
+# Extension Points
+
+- `onBeforeMemberCreate($steamId)`
+  - This is handy if you wish to whitelist specific players or my intention for this was to only allow players who have joined the game server previously access to the site
+  - Passed the 64-Bit SteamID
+  - If the member already exists however, this extension point will never be reached.
+- `onAfterMemberCreate($Member)`
+  - Passed the created `Member` object as reference
+  - If the member already exists however, this extension point will never be reached.
+  
 # Roadmap
 
 - Forum Support
