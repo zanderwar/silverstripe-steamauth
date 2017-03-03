@@ -1,0 +1,23 @@
+{
+  "name": "zanderwar/steamauth",
+  "description": "Steam Authenticator",
+  "authors": [
+    {
+      "name": "Reece Alexander",
+      "email": "reece.alexander@gmail.com",
+      "role": "Maintainer / Developer"
+    }
+  ],
+  "type": "silverstripe-module",
+  "support": {
+    "email": "reece@steadlane.com.au"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  },
+  "require": {
+    "silverstripe/framework": "^4.0@dev"
+  }
+}
