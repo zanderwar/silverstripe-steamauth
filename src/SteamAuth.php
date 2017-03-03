@@ -114,7 +114,7 @@ class SteamAuth extends Object
             return $member;
         }
 
-        $this->extend('onBeforeMemberCreate', $member);
+        $this->extend('onBeforeMemberCreate', $steamId);
 
         $member            = Member::create();
         $member->SteamID   = $steamId;
